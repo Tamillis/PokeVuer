@@ -7,10 +7,10 @@ Clone this repository and open it in your editor of choice.
 
 I used MySQL in XAMPP for local developement, but please configure .env to use your database of choice.
 
-Run the following commands;
-<code>php artisan migrate</code>
-<code>php artisan db:seed</code> (note this will take a short while as pokemonapi.co must respond to requests)
-<code>php artisan serve</code>
+Run the following commands;<br/>
+<code>php artisan migrate</code><br/>
+<code>php artisan db:seed</code> (note this will take a short while as pokemonapi.co must respond to requests)<br/>
+<code>php artisan serve</code><br/>
 
 Click on the link provided and view the local server to see the project.
 
