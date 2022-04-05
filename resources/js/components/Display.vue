@@ -1,6 +1,7 @@
 <template>
-    <div class="flex flex-col sm:flex-row flex-wrap justify-center items-center my-2">
-        <div v-for="mon in currPageData">
+    <div>
+        <Pokemon v-for="mon in currPageData" :id="mon.id" :name="mon.name" :spriteUrl="mon.spriteUrl"/>
+        <!-- <div v-for="(mon, index) in currPageData">
             <p class="text-xl font-light text-center text-white">
                 {{ mon.name.replace(/^\w/, (c) => c.toUpperCase()) }}
                 #{{ mon.id }}
@@ -10,10 +11,10 @@
                     :src="mon.spriteUrl"
                     width="200"
                     class="hover:cursor-pointer rounded-full"
-                    @click="toggleElHidden(mon.id + '_form')"
+                    @click="toggleHidden(index)"
                 />
-                <div :id="mon.id + '_form'" class="hidden">
-                    <!-- I don't know why the following component keeps old data after paging... -->
+                <div v-if="notHidden.value[index]" class="flex flex-col justify-center items-center">
+                    
                     <UpdateForm :id="mon.id" :name="mon.name" :spriteUrl="mon.spriteUrl"/>
 
                     <button
@@ -22,23 +23,24 @@
                     >Delete</button>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 </template>
 
 <script setup>
+import {ref, onMounted} from 'vue';
 import UpdateForm from './UpdateForm.vue';
+import Pokemon from './Pokemon.vue';
 
-defineProps(['currPageData']);
+const props = defineProps(['currPageData']);
 
 //defined emit for use within deletePost function
 const emit = defineEmits(["reload"]);
 
-function toggleElHidden(id) {
-    //passed in id is already formatted for the relevant element
-    let el = document.getElementById(id);
-    //for now the style to switch between are hard-coded, but could easily be defined as a variable
-    (el.className === "hidden") ? el.className = "flex flex-col justify-center items-center" : el.className = "hidden";
+const notHidden = ref([]);
+
+function toggleHidden(index) {
+    notHidden.value[index] = notHidden.value[index];
 }
 
 function deletePost(id) {
@@ -49,4 +51,11 @@ function deletePost(id) {
         emit("reload");
     }
 }
+
+// onMounted(() => {
+//     props.currPageData.forEach(mon => {
+//         hidden.value.push(false);
+//     });
+//     console.log(hidden.value[0]);
+// });
 </script>
