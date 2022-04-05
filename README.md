@@ -7,7 +7,7 @@ Clone this repository and open it in your editor of choice.
 
 I used MySQL in XAMPP for local developement, but please configure .env to use your database of choice.
 
-Run the following command<br/>
+Run the following commands<br/>
 <code>php artisan migrate</code><br/>
 <code>php artisan db:seed</code> (note this will take a short while as pokeapi.co needs to respond to requsts)<br/>
 <code>php artisan serve</code><br/>
