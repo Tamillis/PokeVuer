@@ -32,4 +32,7 @@ No more Metapod<br/>
 Pagination<br/>
 <img src="https://i.imgur.com/Z10weHs.png" width=500>
 
+Mobile friendly<br/>
+<img src="https://i.imgur.com/uBlGAK9.png">
+
 <a href="https://imgur.com/a/xVc8YJG">Imgur album</a>
