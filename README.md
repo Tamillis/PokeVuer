@@ -14,4 +14,5 @@ php artisan serve
 
 Click on the link provided and view the local server to see the project.
 
-<img src="https://imgur.com/a/CW50Pbz">
+<img src="https://i.imgur.com/1juTbft.png">
+<img src="https://i.imgur.com/1Lv0UaI.png">
