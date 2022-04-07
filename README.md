@@ -6,7 +6,6 @@ Naturally, you will need git too.
 
 First Clone this repository into a directory of your choice using your prefered terminal.<br/>
 <code>git clone https://github.com/Tamillis/PokeVuer.git</code><br/>
-<code>git checkout master</code><br/>
 In the same directory run
 <code>composer install</code><br/>
 
