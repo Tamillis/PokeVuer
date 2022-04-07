@@ -36,7 +36,7 @@ function deletePost(id) {
         //call the API's delete path
         fetch('api/pokemon/' + id, { method: 'DELETE' });
 
-        //to avoid leaving the UpdateForm open with old data, set it to not visible
+        //to avoid leaving the UpdateForm open, set it to not visible
         visible.value = false;
         
         //emit to parent to trigger a reload of the base data, as one has now been removed, and to refresh the view

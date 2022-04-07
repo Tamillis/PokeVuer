@@ -17325,7 +17325,7 @@ __webpack_require__.r(__webpack_exports__);
         //call the API's delete path
         fetch('api/pokemon/' + id, {
           method: 'DELETE'
-        }); //to avoid leaving the UpdateForm open with old data, set it to not visible
+        }); //to avoid leaving the UpdateForm open, set it to not visible
 
         visible.value = false; //emit to parent to trigger a reload of the base data, as one has now been removed, and to refresh the view
 
@@ -17363,7 +17363,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  props: ['id', 'name', 'spriteUrl'],
+  props: ["id", "name", "spriteUrl"],
   setup: function setup(__props, _ref) {
     var expose = _ref.expose;
     expose();
@@ -17371,12 +17371,50 @@ __webpack_require__.r(__webpack_exports__);
     var id = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)(props.id);
     var name = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)(props.name);
     var spriteUrl = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)(props.spriteUrl);
+    var nameErr = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)(false);
+    var urlErr = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)(false);
+
+    function submitUpdate(event) {
+      fetch("api/pokemon/" + props.id, {
+        __method: "PUT"
+      });
+      console.log("Submitted ");
+      console.log(event);
+    }
+
+    (0,vue__WEBPACK_IMPORTED_MODULE_0__.onUpdated)(function () {
+      if (!containsOnlyLetters(name.value)) nameErr.value = true;else nameErr.value = false;
+      if (!isValidUrl(spriteUrl.value)) urlErr.value = true;else urlErr.value = false;
+    });
+
+    function containsOnlyLetters(str) {
+      return /^[A-Za-z]+$/.test(str);
+    }
+
+    function isValidUrl(string) {
+      var url_string;
+
+      try {
+        url_string = new URL(string);
+      } catch (_) {
+        return false;
+      }
+
+      return url_string.protocol === "http:" || url_string.protocol === "https:";
+    }
+
     var __returned__ = {
       props: props,
       id: id,
       name: name,
       spriteUrl: spriteUrl,
-      ref: vue__WEBPACK_IMPORTED_MODULE_0__.ref
+      nameErr: nameErr,
+      urlErr: urlErr,
+      submitUpdate: submitUpdate,
+      containsOnlyLetters: containsOnlyLetters,
+      isValidUrl: isValidUrl,
+      ref: vue__WEBPACK_IMPORTED_MODULE_0__.ref,
+      onUpdated: vue__WEBPACK_IMPORTED_MODULE_0__.onUpdated
     };
     Object.defineProperty(__returned__, '__isScriptSetup', {
       enumerable: false,
@@ -17559,7 +17597,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
-var _hoisted_1 = ["action"];
+var _hoisted_1 = ["onSubmit", "action"];
 
 var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
   type: "hidden",
@@ -17576,24 +17614,26 @@ var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 );
 
 var _hoisted_4 = ["id", "placeholder"];
+var _hoisted_5 = {
+  key: 0,
+  "class": "text-red-500 text-sm font-light"
+};
 
-var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "for": "spriteUrl"
 }, "New Sprite URL", -1
 /* HOISTED */
 );
 
-var _hoisted_6 = ["id", "placeholder"];
-
-var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-  type: "submit",
-  "class": "bg-slate-100 rounded-md border-slate-300 border-2 active:translate-y-0.5 w-fit my-4 px-1 text-black"
-}, "Update", -1
-/* HOISTED */
-);
-
+var _hoisted_7 = ["id", "placeholder"];
+var _hoisted_8 = {
+  key: 1,
+  "class": "text-red-500 text-sm font-light"
+};
+var _hoisted_9 = ["disabled"];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("form", {
+    onSubmit: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)($setup.submitUpdate, ["prevent"]),
     action: 'api/pokemon/' + $setup.props.id,
     method: "POST",
     "class": "text-slate-600 text-sm flex flex-col justify-center items-center mb-1"
@@ -17604,21 +17644,33 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
       return $setup.name = $event;
     }),
-    placeholder: $setup.name
-  }, null, 8
-  /* PROPS */
-  , _hoisted_4), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.name]]), _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    placeholder: $setup.name,
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
+      'border-red-500': $setup.nameErr || $setup.urlErr
+    })
+  }, null, 10
+  /* CLASS, PROPS */
+  , _hoisted_4), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.name]]), $setup.nameErr ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_5, " Alphabetical characters only ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     name: "spriteUrl",
     id: $setup.id.value + '_newSpriteUrl',
     "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
       return $setup.spriteUrl = $event;
     }),
-    placeholder: $setup.spriteUrl
-  }, null, 8
+    placeholder: $setup.spriteUrl,
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
+      'border-red-500': $setup.nameErr || $setup.urlErr
+    })
+  }, null, 10
+  /* CLASS, PROPS */
+  , _hoisted_7), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.spriteUrl]]), $setup.urlErr ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_8, "Valid URL only")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    type: "submit",
+    disabled: $setup.nameErr || $setup.urlErr,
+    "class": "bg-slate-100 rounded-md border-slate-300 border-2 active:translate-y-0.5 w-fit my-4 px-1 text-black"
+  }, " Update ", 8
   /* PROPS */
-  , _hoisted_6), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.spriteUrl]]), _hoisted_7], 8
-  /* PROPS */
+  , _hoisted_9)], 40
+  /* PROPS, HYDRATE_EVENTS */
   , _hoisted_1);
 }
 

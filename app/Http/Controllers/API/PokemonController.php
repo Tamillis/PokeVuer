@@ -66,6 +66,7 @@ class PokemonController extends Controller
      */
     public function update(Request $request, $id)
     {
+        dd($request);
         $mon = Pokemon::findOrFail($id);
 
         $request->validate([
