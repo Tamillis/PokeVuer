@@ -17235,8 +17235,8 @@ __webpack_require__.r(__webpack_exports__);
 
     function loadData() {
       //simple fetch functionality used since the API being interacted with is our own Laravel based API
-      fetch('/api/pokemon', {
-        method: 'GET'
+      fetch("/api/pokemon", {
+        method: "GET"
       }).then(function (response) {
         return response.json();
       }).then(function (data) {
@@ -17408,8 +17408,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["TopBar"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Pagination handling component "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Paginator"], {
     onNextPage: $setup.nextPage,
     onPrevPage: $setup.prevPage
-  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Main Pokemon Display "), $setup.dataReady ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.currPageData, function (mon) {
+  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Main Pokemon Display "), $setup.dataReady ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.currPageData, function (mon, index) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)($setup["Pokemon"], {
+      key: index,
       id: mon.id,
       name: mon.name,
       spriteUrl: mon.spriteUrl,
@@ -17417,8 +17418,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }, null, 8
     /* PROPS */
     , ["id", "name", "spriteUrl"]);
-  }), 256
-  /* UNKEYED_FRAGMENT */
+  }), 128
+  /* KEYED_FRAGMENT */
   ))])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)], 64
   /* STABLE_FRAGMENT */
   );
@@ -17683,13 +17684,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _App_vue_vue_type_template_id_f348271a__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./App.vue?vue&type=template&id=f348271a */ "./resources/js/App.vue?vue&type=template&id=f348271a");
 /* harmony import */ var _App_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./App.vue?vue&type=script&setup=true&lang=js */ "./resources/js/App.vue?vue&type=script&setup=true&lang=js");
-/* harmony import */ var C_Users_bella_Documents_VSCode_Projects_Laravel_PokeVuer_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var C_Users_Bellaby_Documents_VSCode_Projects_PokeVuer_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_Users_bella_Documents_VSCode_Projects_Laravel_PokeVuer_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_App_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_App_vue_vue_type_template_id_f348271a__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/App.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_Users_Bellaby_Documents_VSCode_Projects_PokeVuer_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_App_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_App_vue_vue_type_template_id_f348271a__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/App.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -17709,12 +17710,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _Paginator_vue_vue_type_template_id_59656db6__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Paginator.vue?vue&type=template&id=59656db6 */ "./resources/js/components/Paginator.vue?vue&type=template&id=59656db6");
-/* harmony import */ var C_Users_bella_Documents_VSCode_Projects_Laravel_PokeVuer_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var C_Users_Bellaby_Documents_VSCode_Projects_PokeVuer_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 const script = {}
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_Users_bella_Documents_VSCode_Projects_Laravel_PokeVuer_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__["default"])(script, [['render',_Paginator_vue_vue_type_template_id_59656db6__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/Paginator.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_Users_Bellaby_Documents_VSCode_Projects_PokeVuer_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__["default"])(script, [['render',_Paginator_vue_vue_type_template_id_59656db6__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/Paginator.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -17735,13 +17736,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _Pokemon_vue_vue_type_template_id_257bc4b8__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Pokemon.vue?vue&type=template&id=257bc4b8 */ "./resources/js/components/Pokemon.vue?vue&type=template&id=257bc4b8");
 /* harmony import */ var _Pokemon_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Pokemon.vue?vue&type=script&setup=true&lang=js */ "./resources/js/components/Pokemon.vue?vue&type=script&setup=true&lang=js");
-/* harmony import */ var C_Users_bella_Documents_VSCode_Projects_Laravel_PokeVuer_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var C_Users_Bellaby_Documents_VSCode_Projects_PokeVuer_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_Users_bella_Documents_VSCode_Projects_Laravel_PokeVuer_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_Pokemon_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Pokemon_vue_vue_type_template_id_257bc4b8__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/Pokemon.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_Users_Bellaby_Documents_VSCode_Projects_PokeVuer_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_Pokemon_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Pokemon_vue_vue_type_template_id_257bc4b8__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/Pokemon.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -17761,12 +17762,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _TopBar_vue_vue_type_template_id_374685a9__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TopBar.vue?vue&type=template&id=374685a9 */ "./resources/js/components/TopBar.vue?vue&type=template&id=374685a9");
-/* harmony import */ var C_Users_bella_Documents_VSCode_Projects_Laravel_PokeVuer_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var C_Users_Bellaby_Documents_VSCode_Projects_PokeVuer_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 const script = {}
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_Users_bella_Documents_VSCode_Projects_Laravel_PokeVuer_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__["default"])(script, [['render',_TopBar_vue_vue_type_template_id_374685a9__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/TopBar.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_Users_Bellaby_Documents_VSCode_Projects_PokeVuer_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__["default"])(script, [['render',_TopBar_vue_vue_type_template_id_374685a9__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/TopBar.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -17787,13 +17788,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _UpdateForm_vue_vue_type_template_id_48890950__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./UpdateForm.vue?vue&type=template&id=48890950 */ "./resources/js/components/UpdateForm.vue?vue&type=template&id=48890950");
 /* harmony import */ var _UpdateForm_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./UpdateForm.vue?vue&type=script&setup=true&lang=js */ "./resources/js/components/UpdateForm.vue?vue&type=script&setup=true&lang=js");
-/* harmony import */ var C_Users_bella_Documents_VSCode_Projects_Laravel_PokeVuer_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var C_Users_Bellaby_Documents_VSCode_Projects_PokeVuer_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_Users_bella_Documents_VSCode_Projects_Laravel_PokeVuer_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_UpdateForm_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_UpdateForm_vue_vue_type_template_id_48890950__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/UpdateForm.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_Users_Bellaby_Documents_VSCode_Projects_PokeVuer_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_UpdateForm_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_UpdateForm_vue_vue_type_template_id_48890950__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/UpdateForm.vue"]])
 /* hot reload */
 if (false) {}
 
