@@ -1,13 +1,19 @@
 <h1>PokeVuer</h1>
 <h2> A PokemonAPI viewer using Vue JS </h2>
 
-To run ensure PHP, Laravel and NPM are installed.
+To run ensure PHP, Laravel, Composer and NPM are installed.
+Naturally, you will need git too.
 
-Clone this repository and open it in your editor of choice.
+First Clone this repository into a directory of your choice using your prefered terminal.
+<code>git clone https://github.com/Tamillis/PokeVuer.git</code><br/>
+<code>git checkout master</code><br/>
+In the same directory run
+<code>composer install</code><br/>
 
-I used MySQL in XAMPP for local developement, but please configure .env to use your database of choice.
+I used MySQL in XAMPP for local developement, but please create the .env file by changing the name of .env.example to .enc and configure it to use your database of choice.
 
 Run the following commands<br/>
+<code>php artisan key:generate</code><br/>
 <code>php artisan migrate</code><br/>
 <code>php artisan db:seed</code> (note this will take a short while as pokeapi.co needs to respond to requsts)<br/>
 <code>php artisan serve</code><br/>
