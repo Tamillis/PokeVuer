@@ -10,9 +10,11 @@ First Clone this repository into a directory of your choice using your prefered 
 In the same directory run
 <code>composer install</code><br/>
 
-I used MySQL in XAMPP for local developement, but please create the .env file by changing the name of .env.example to .enc and configure it to use your database of choice.
+I used MySQL in XAMPP for local developement, but please create the .env file by changing the name of .env.example to .env and configure it to use your database of choice.
 
 Run the following commands<br/>
+<code>npm install</code><br/>
+<code>npm run dev</code><br/>
 <code>php artisan key:generate</code><br/>
 <code>php artisan migrate</code><br/>
 <code>php artisan db:seed</code> (note this will take a short while as pokeapi.co needs to respond to requsts)<br/>
