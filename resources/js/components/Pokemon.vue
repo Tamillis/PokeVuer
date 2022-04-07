@@ -12,8 +12,7 @@
                 @click="() => visible = !visible"
             />
             <div v-if="visible" class="flex flex-col justify-center items-center">
-                <!-- I don't know why the following component keeps old data after paging... -->
-                <UpdateForm :id="id" :name="name" :spriteUrl="spriteUrl" />
+                <UpdateForm :key="id" :id="id" :name="name" :spriteUrl="spriteUrl" />
 
                 <button
                     @click="deletePost(id)"
