@@ -17374,12 +17374,10 @@ __webpack_require__.r(__webpack_exports__);
     var nameErr = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)(false);
     var urlErr = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)(false);
 
-    function submitUpdate(event) {
-      fetch("api/pokemon/" + props.id, {
-        __method: "PUT"
-      });
+    function submitUpdate(form) {
+      //fetch("api/pokemon/" + props.id, { __method: "PUT" });
       console.log("Submitted ");
-      console.log(event);
+      console.log(form);
     }
 
     (0,vue__WEBPACK_IMPORTED_MODULE_0__.onUpdated)(function () {
@@ -17597,7 +17595,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
-var _hoisted_1 = ["onSubmit", "action"];
+var _hoisted_1 = ["action"];
 
 var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
   type: "hidden",
@@ -17613,7 +17611,7 @@ var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 /* HOISTED */
 );
 
-var _hoisted_4 = ["id", "placeholder"];
+var _hoisted_4 = ["placeholder"];
 var _hoisted_5 = {
   key: 0,
   "class": "text-red-500 text-sm font-light"
@@ -17625,7 +17623,7 @@ var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 /* HOISTED */
 );
 
-var _hoisted_7 = ["id", "placeholder"];
+var _hoisted_7 = ["placeholder"];
 var _hoisted_8 = {
   key: 1,
   "class": "text-red-500 text-sm font-light"
@@ -17633,14 +17631,16 @@ var _hoisted_8 = {
 var _hoisted_9 = ["disabled"];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("form", {
-    onSubmit: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)($setup.submitUpdate, ["prevent"]),
-    action: 'api/pokemon/' + $setup.props.id,
+    onSubmit: _cache[2] || (_cache[2] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
+      return $setup.submitUpdate(_ctx.form);
+    }, ["prevent"])),
+    action: 'api/pokemon/' + $setup.id,
     method: "POST",
     "class": "text-slate-600 text-sm flex flex-col justify-center items-center mb-1"
   }, [_hoisted_2, _hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     name: "name",
-    id: $setup.id.value + '_newName',
+    id: "name",
     "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
       return $setup.name = $event;
     }),
@@ -17653,7 +17653,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   , _hoisted_4), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.name]]), $setup.nameErr ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_5, " Alphabetical characters only ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     name: "spriteUrl",
-    id: $setup.id.value + '_newSpriteUrl',
+    id: "spriteUrl",
     "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
       return $setup.spriteUrl = $event;
     }),

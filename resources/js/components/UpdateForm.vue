@@ -1,7 +1,7 @@
 <template>
   <form
-    @submit.prevent="submitUpdate"
-    :action="'api/pokemon/' + props.id"
+    @submit.prevent="submitUpdate(form)"
+    :action="'api/pokemon/' + id"
     method="POST"
     class="
       text-slate-600 text-sm
@@ -16,7 +16,7 @@
     <input
       type="text"
       name="name"
-      :id="id.value + '_newName'"
+      id="name"
       v-model="name"
       :placeholder="name"
       :class="{ 'border-red-500': nameErr || urlErr }"
@@ -28,7 +28,7 @@
     <input
       type="text"
       name="spriteUrl"
-      :id="id.value + '_newSpriteUrl'"
+      id="spriteUrl"
       v-model="spriteUrl"
       :placeholder="spriteUrl"
       :class="{ 'border-red-500': nameErr || urlErr }"
@@ -63,11 +63,11 @@ const spriteUrl = ref(props.spriteUrl);
 const nameErr = ref(false);
 const urlErr = ref(false);
 
-function submitUpdate(event) {
-  fetch("api/pokemon/" + props.id, { __method: "PUT" });
+function submitUpdate(form) {
+  //fetch("api/pokemon/" + props.id, { __method: "PUT" });
 
   console.log("Submitted ");
-  console.log(event);
+  console.log(form);
 }
 
 onUpdated(() => {
