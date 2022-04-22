@@ -1,6 +1,8 @@
 <h1>PokeVuer</h1>
 <h2> A PokemonAPI viewer using Vue JS </h2>
 
+### [This is the One-Day-Challenger version, see the Post-Challenge branch for the complete version]
+
 To run ensure PHP, Laravel, Composer and NPM are installed.
 Naturally, you will need git too.
 
